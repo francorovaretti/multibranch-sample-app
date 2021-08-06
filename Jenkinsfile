@@ -6,7 +6,7 @@ pipeline {
     stage('Hello') {
       steps {
         sh '''
-          ./gradlew clean build
+          java -version
         '''
       }
     }
