@@ -4,7 +4,7 @@ pipeline {
     buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
   }
   stages {
-    stage('Hello') {
+    stage('Hello test') {
       steps {
         sh '''
           java -version
@@ -15,12 +15,6 @@ pipeline {
       steps {
         sh '''
           cat README.md
-        '''
-      }
-    stage('ls -la') {
-      steps {
-        sh '''
-          ls -la
         '''
       }
     }
