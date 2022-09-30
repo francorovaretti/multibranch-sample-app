@@ -11,6 +11,12 @@ pipeline {
         '''
       }
     }
+    stage('echo') {
+      steps {
+        sh '''
+          echo hostname
+        '''
+
     stage('cat README') {
       steps {
         sh '''
