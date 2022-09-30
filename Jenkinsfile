@@ -1,12 +1,11 @@
 pipeline {
-    agent { label 'master' }
+    agent {
+        docker { image 'node:16.13.1-alpine' }
+    }
     stages {
-        stage('build') {
+        stage('Test') {
             steps {
-                echo "Hello World!"
-                sh "echo Hello from the shell"
-                sh "hostname"
-                sh "uptime"
+                sh 'node --version'
             }
         }
     }
