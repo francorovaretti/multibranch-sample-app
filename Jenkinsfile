@@ -1,22 +1,13 @@
 pipeline {
-  agent any
-  options {
-    buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
-  }
-  stages {
-    stage('Hello test') {
-      steps {
-        sh '''
-          java -version
-        '''
-      }
+    agent { label 'master' }
+    stages {
+        stage('build') {
+            steps {
+                echo "Hello World!"
+                sh "echo Hello from the shell"
+                sh "hostname"
+                sh "uptime"
+            }
+        }
     }
-    stage('cat README') {
-      steps {
-        sh '''
-          cat README.md
-        '''
-      }
-    }
-  }
 }
